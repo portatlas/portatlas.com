@@ -1,15 +1,13 @@
-import Head from 'next/head';
 import { Container, Image } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 import Layout from "../components/layout";
 import Faqs from '../components/faqs';
 import Loaders from '../components/loaders';
 import ABOUT_QUERY from "../graphql/about.query";
-import { useQuery } from '@apollo/react-hooks';
+import { initializeApollo } from "../client/apollo";
 
-const Home = () => {
-  const { data, loading, error } = useQuery(ABOUT_QUERY);
-
+const Home = (props) => {
+  const { loading, error, data } = props;
   if (loading) {
     return <Loaders />;
   }
@@ -18,7 +16,8 @@ const Home = () => {
     return <h1>Error fetching data!</h1>;
   }
 
-  const { about } = data;
+  const { about } = props.data;
+
   return (
     <Layout>
       <Image className='cover-image' src={about.heroImage.url} />
@@ -35,6 +34,21 @@ const Home = () => {
       </Container>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  const { data } = await apolloClient.query({
+    query: ABOUT_QUERY
+  })
+
+  return {
+    props: {
+      data,
+    },
+    unstable_revalidate: 1,
+  }
 }
 
 export default Home;
