@@ -1,24 +1,20 @@
+import React from 'react';
+import App from 'next/app';
+import { ApolloProvider } from '@apollo/react-hooks';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles.scss';
-import { ApolloClient } from "apollo-client";
-import { HttpLink } from "apollo-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
-import { ApolloProvider } from "react-apollo";
 
-const GRAPHCMS_API = 'https://api-us-west-2.graphcms.com/v2/ckb1fvd8g0dsd01yy774wc62o/master';
+import withApollo from '../client/apollo';
 
-const client = new ApolloClient({
-  link: new HttpLink({ uri: GRAPHCMS_API }),
-  cache: new InMemoryCache(),
-});
+class MyApp extends App {
+  render() {
+    const { Component, pageProps, apollo } = this.props;
+    return (
+      <ApolloProvider client={apollo}>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    )
+  }
+}
 
-
-const App = ({ Component, pageProps }) => {
-  return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
-  )
-};
-
-export default App;
+export default withApollo(MyApp);
