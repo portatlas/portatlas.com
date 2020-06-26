@@ -1,2 +1,4 @@
+Sitemap: https://portatlas.com/api/sitemap.xml
+
 User-agent: *
-Disallow: 
+Allow: /*
