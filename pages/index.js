@@ -20,13 +20,13 @@ const Home = (props) => {
 
   return (
     <Layout title="HOME">
-      <Image className='cover-image' src={about.heroImage.url} />
+      <Image className='cover-image' src={about.heroImage.url} alt="hero image" />
       <Container>
         <div className="section">
           <h1>ABOUT</h1>
           <hr />
           <ReactMarkdown>{about.intro.markdown}</ReactMarkdown>
-          <Image src={about.map.url} fluid />
+          <Image src={about.map.url} fluid alt="map" />
           <ReactMarkdown>{about.mapDesc.markdown}</ReactMarkdown>
         </div>
 

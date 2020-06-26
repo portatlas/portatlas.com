@@ -66,7 +66,7 @@ const Applications = (props) => {
                           < Carousel.Caption className={styles.caption} >
                             <p>{img.description ? img.description.markdown : null}</p>
                           </Carousel.Caption>
-                          <Image src={img.picture.url} fluid />
+                          <Image alt={obj.name} src={img.picture.url} fluid />
                         </Carousel.Item>)
                       })}
                     </Carousel>
