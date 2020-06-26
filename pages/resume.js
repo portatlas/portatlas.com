@@ -10,7 +10,7 @@ const Resume = ({ data: { loading, error, experiences, educations, skills } }) =
   if (error) return <h1>Error fetching resume!</h1>;
   if (!loading) {
     return (
-      <Layout>
+      <Layout title="RESUME">
         <Container className={styles.experiences} >
           <div className={styles.section}>
             <h2>EXPERIENCES</h2>

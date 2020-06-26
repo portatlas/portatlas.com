@@ -19,7 +19,7 @@ const Objects = (props) => {
   const { objects } = data;
 
   return (
-    <Layout>
+    <Layout title="OBJECT">
       <Container className={styles.portfolioContainer}>
         <div className={styles.section}>
           {objects.map((obj, idx) => (
@@ -30,14 +30,14 @@ const Objects = (props) => {
                 </Col>
                 <Col xs={6} sm={2} md={3} className={styles.headlineTop}>
                   <h6>MATERIALS:</h6>
-                  {obj.medium.map((m) => {
-                    return <h6 className={styles.multiInfo}><b>{m}</b></h6>
+                  {obj.medium.map((m, idx) => {
+                    return <h6 className={styles.multiInfo} key={`medium-${idx}`}><b>{m}</b></h6>
                   })}
                 </Col>
                 <Col xs={6} sm={2} md={2} className={styles.headlineTop}>
                   <h6>DIMENSIONS:</h6>
-                  {obj.dimensions.map((d) => {
-                    return <h6 className={styles.multiInfo}><b>{d}</b></h6>
+                  {obj.dimensions.map((d, idx) => {
+                    return <h6 className={styles.multiInfo} key={`dimensions-${idx}`}><b>{d}</b></h6>
                   })}
                 </Col>
                 <Col xs={6} sm={3} md={3}>
@@ -54,7 +54,7 @@ const Objects = (props) => {
                   <ReactMarkdown>{obj.description.markdown}</ReactMarkdown>
                 </Col>
                 <Col xs={12} sm={9}>
-                  <Image src={obj.heroImage.url} fluid />
+                  <Image src={obj.heroImage.url} alt={obj.name} fluid />
                 </Col>
               </Row>
               <hr className={styles.itemSep} />
