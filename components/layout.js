@@ -1,6 +1,6 @@
 import Navigation from "./navigation";
 import { useEffect } from "react";
-import Head from "next/head";
+import Head from "../components/head";
 import Footer from "./footer";
 
 const Layout = (props) => {
@@ -19,15 +19,9 @@ const Layout = (props) => {
     }
   })
 
-
   return (
     <div>
-      <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-83806482-4"></script>
-        <title>port/atlas</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://use.typekit.net/lpp5mat.css"></link>
-      </Head>
+      <Head title={props.title} />
       <Navigation />
       {props.children}
       <Footer />

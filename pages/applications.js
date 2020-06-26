@@ -18,7 +18,7 @@ const Applications = (props) => {
   const { applications } = data;
 
   return (
-    <Layout>
+    <Layout title="APPS">
       <Container className={styles.portfolioContainer}>
         <div className={styles.section}>
           {applications.map((obj, idx) => (

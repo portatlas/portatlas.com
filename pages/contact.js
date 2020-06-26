@@ -51,7 +51,7 @@ const Contact = () => {
 
 
   return (
-    <Layout>
+    <Layout title="CONTACT">
       <Container>
         <form className={styles.form} onSubmit={handleFormSubmit}>
           <div className="text-center">

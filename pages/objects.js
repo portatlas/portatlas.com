@@ -19,7 +19,7 @@ const Objects = (props) => {
   const { objects } = data;
 
   return (
-    <Layout>
+    <Layout title="OBJECT">
       <Container className={styles.portfolioContainer}>
         <div className={styles.section}>
           {objects.map((obj, idx) => (
