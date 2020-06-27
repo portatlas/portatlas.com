@@ -17,9 +17,8 @@ const Home = (props) => {
   }
 
   const { about } = props.data;
-
   return (
-    <Layout title="HOME">
+    <Layout title={about.title} description={about.description}>
       <Image className='cover-image' src={about.heroImage.url} alt="hero image" />
       <Container>
         <div className="section">

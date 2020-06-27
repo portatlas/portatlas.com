@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import Layout from "../components/layout";
 import styles from "../scss/contact.module.scss";
+import Loaders from "../components/loaders";
 
 const INITIAL_STATE = {
   fullname: '',
@@ -37,7 +38,7 @@ const Contact = () => {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-
+    setMessage(<Loaders />);
     axios({
       method: 'post',
       url: 'https://7sh0k8u0q2.execute-api.us-west-2.amazonaws.com/prod/contact',
@@ -51,7 +52,7 @@ const Contact = () => {
 
 
   return (
-    <Layout title="CONTACT">
+    <Layout title="CONTACT FORM" description="A form to get in touch with us!">
       <Container>
         <form className={styles.form} onSubmit={handleFormSubmit}>
           <div className="text-center">
@@ -108,7 +109,7 @@ const Contact = () => {
           <button className={styles.button}>SUBMIT</button>
         </form>
         <div className="text-center">
-          <p>{message}</p>
+          <div>{message}</div>
         </div>
       </Container>
     </Layout>
