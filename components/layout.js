@@ -21,7 +21,7 @@ const Layout = (props) => {
 
   return (
     <div>
-      <Head title={props.title} />
+      <Head title={props.title} description={props.description} />
       <Navigation />
       {props.children}
       <Footer />
