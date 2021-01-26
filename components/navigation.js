@@ -13,9 +13,8 @@ const Navigation = () => (
         <Nav className="mr-auto">
         </Nav>
         <Nav>
-          <Nav.Link className={styles.link} href="/resume">RESUME</Nav.Link>
           <Nav.Link className={styles.link} href="/applications">APPS</Nav.Link>
-          <Nav.Link className={styles.link} href="/objects">OBJECTS</Nav.Link>
+          <Nav.Link className={styles.link} href="/lights">LIGHTS</Nav.Link>
           <Nav.Link className={styles.link} href="/contact">CONTACT</Nav.Link>
         </Nav>
       </Navbar.Collapse>
