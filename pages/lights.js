@@ -7,7 +7,7 @@ import Loaders from '../components/loaders';
 import styles from '../scss/portfolio.module.scss';
 import { initializeApollo } from "../client/apollo";
 
-const Objects = (props) => {
+const Lights = (props) => {
   const { error, loading, data } = props;
 
   if (loading) {
@@ -81,4 +81,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Objects;
+export default Lights;
