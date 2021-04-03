@@ -41,9 +41,8 @@ const Contact = () => {
         setMessage(<Loaders />);
         axios({
             method: "post",
-            url:
-                "https://7sh0k8u0q2.execute-api.us-west-2.amazonaws.com/prod/contact",
-            data: JSON.stringify(state),
+            url: "/api/contact",
+            data: state,
         })
             .then((resp) => {
                 setMessage(
