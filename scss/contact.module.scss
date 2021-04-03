@@ -1,32 +1,32 @@
 .form {
-  display: grid;
-  margin: 0 auto;
-  padding: 1.5rem;
-  width: 500px;
+    display: grid;
+    margin: 0 auto;
+    padding: 1.5rem;
+    width: 500px;
 }
 
 .label {
-  padding-top: 12px;
-  text-transform: uppercase !important;
-  font-size: 0.75rem;
-  text-align: left;
+    padding-top: 12px;
+    text-transform: uppercase !important;
+    font-size: 0.75rem;
+    text-align: left;
 }
 
 .input {
-  display: block;
-  border: 0.5px solid rgba(0,0,0,0.2);
-  font-size: 1rem;
+    display: block;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
 }
 
 .textArea {
-  min-height: 150px;
+    min-height: 150px;
 }
 
 .button {
-  border: 0.5px solid rgba(0,0,0,0.9);
-  padding: 7px;
-  margin-top: 22px;
-  width: 200px;
-  font-size: 0.85rem;
-  justify-self: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.9);
+    padding: 7px;
+    margin-top: 22px;
+    width: 200px;
+    font-size: 0.85rem;
+    justify-self: center;
 }
