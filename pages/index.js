@@ -5,6 +5,7 @@ import Faqs from "../components/faqs";
 import Loaders from "../components/loaders";
 import HOME_QUERY from "../graphql/home.query";
 import { initializeApollo } from "../client/apollo";
+import styles from "../scss/index.module.scss";
 
 const Home = (props) => {
     const { loading, error, data } = props;
@@ -16,22 +17,20 @@ const Home = (props) => {
         return <h1>Error fetching data!</h1>;
     }
 
-    const { abouts, faqs } = data;
-    const about = abouts[0];
+    const { sections, faqs } = data;
+    const section = sections[0];
     return (
-        <Layout title={about.title} description={about.description}>
+        <Layout title={section.title} description={section.description}>
             <Image
-                className="cover-image"
-                src={about.heroImage.url}
+                className={styles.coverImage}
+                src={section.heroImage.url}
                 alt="hero image"
             />
             <Container>
-                <div className="section">
+                <div className={styles.section}>
                     <h1>ABOUT</h1>
                     <hr />
-                    <ReactMarkdown>{about.intro.markdown}</ReactMarkdown>
-                    <Image src={about.map.url} fluid alt="map" />
-                    <ReactMarkdown>{about.mapDesc.markdown}</ReactMarkdown>
+                    <ReactMarkdown>{section.intro.markdown}</ReactMarkdown>
                 </div>
 
                 <Faqs faqs={faqs} />

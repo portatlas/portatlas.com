@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const HOME_QUERY = gql`
     query homePage {
-        abouts(where: { title: "HOME PAGE" }) {
+        sections(where: { title: "HOME PAGE" }) {
             id
             title
             description
@@ -11,13 +11,6 @@ const HOME_QUERY = gql`
             }
             heroImage {
                 url
-            }
-            map {
-                url
-            }
-            mapDesc {
-                markdown
-                html
             }
         }
         faqs {
