@@ -1,12 +1,17 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
+import IFaq from "../types/IFaqs";
 
-const Faqs = ({ faqs }) => {
+interface IFaqsProp {
+    faqs: Array<IFaq>;
+}
+
+const Faqs = ({ faqs }: IFaqsProp) => {
     return (
         <Container className="faq-container">
             <h2>FAQS</h2>
             <hr />
             <Row>
-                {faqs?.map((faq) => (
+                {faqs?.map((faq: IFaq) => (
                     <Col xs={12} sm={3} md={3} key={faq.id}>
                         <div>
                             <Image
