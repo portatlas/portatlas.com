@@ -6,10 +6,16 @@ import Layout from "../components/layout";
 import Loaders from "../components/loaders";
 import styles from "../scss/portfolio.module.scss";
 import { initializeApollo } from "../client/apollo";
+import IObject from "../types/IObject";
 
-const Lights = (props) => {
-    const { error, loading, data } = props;
-
+interface ILightsProps {
+    error: boolean;
+    loading: boolean;
+    data: {
+        objects: Array<IObject>;
+    };
+}
+const Lights = ({ error, loading, data }: ILightsProps) => {
     if (loading) {
         return <Loaders />;
     }
@@ -17,13 +23,13 @@ const Lights = (props) => {
     if (error) {
         return <h1>Error fetching objects!</h1>;
     }
-    const { objects } = data;
+    const objects: Array<IObject> = data.objects;
 
     return (
         <Layout title="OBJECT">
             <Container className={styles.portfolioContainer}>
                 <div className={styles.section}>
-                    {objects.map((obj, idx) => (
+                    {objects.map((obj: IObject) => (
                         <div className={styles.item} key={obj.id}>
                             <Row className={styles.headline}>
                                 <Col sm={3}>
@@ -36,11 +42,11 @@ const Lights = (props) => {
                                     className={styles.headlineTop}
                                 >
                                     <h6>MATERIALS:</h6>
-                                    {obj.medium.map((m, idx) => {
+                                    {obj.medium.map((m: string) => {
                                         return (
                                             <h6
                                                 className={styles.multiInfo}
-                                                key={`medium-${idx}`}
+                                                key={`medium-${m}`}
                                             >
                                                 <b>{m}</b>
                                             </h6>
@@ -54,13 +60,13 @@ const Lights = (props) => {
                                     className={styles.headlineTop}
                                 >
                                     <h6>DIMENSIONS:</h6>
-                                    {obj.dimensions.map((d, idx) => {
+                                    {obj.dimensions.map((dimension: string) => {
                                         return (
                                             <h6
                                                 className={styles.multiInfo}
-                                                key={`dimensions-${idx}`}
+                                                key={`dimensions-${dimension}`}
                                             >
-                                                <b>{d}</b>
+                                                <b>{dimension}</b>
                                             </h6>
                                         );
                                     })}
