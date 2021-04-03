@@ -6,4 +6,5 @@ export default interface ISection {
     title: string;
     heroImage: IImage;
     intro: IRichText;
+    description: string;
 }

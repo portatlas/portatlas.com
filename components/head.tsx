@@ -1,6 +1,11 @@
 import NextHead from "next/head";
 
-const Head = ({ title, description }) => (
+interface IHeadProp {
+    title: string;
+    description: string;
+}
+
+const Head = ({ title, description }: IHeadProp) => (
     <NextHead>
         <meta charSet="UTF-8" />
         <title>PORT/ATLAS | {title}</title>

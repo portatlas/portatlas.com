@@ -1,6 +1,6 @@
 import Navigation from "./navigation";
-import { useEffect } from "react";
-import Head from "../components/head";
+import React, { useEffect } from "react";
+import Head from "./head";
 import Footer from "./footer";
 
 const Layout = (props) => {
