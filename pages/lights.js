@@ -14,8 +14,9 @@ const Lights = (props) => {
         return <Loaders />;
     }
 
-    if (error) return <h1>Error fetching objects!</h1>;
-
+    if (error) {
+        return <h1>Error fetching objects!</h1>;
+    }
     const { objects } = data;
 
     return (
