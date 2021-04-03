@@ -1,117 +1,118 @@
 :root {
-  --baby-powder: #FBFBFB;
+    --baby-powder: #fbfbfb;
 }
-
 
 body {
-  font-family:"graphie", sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--baby-powder) !important;
+    font-family: "graphie", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--baby-powder) !important;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  font-family:"graphie", sans-serif;
-  font-display:auto;
-  font-style:normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: "graphie", sans-serif;
+    font-display: auto;
+    font-style: normal;
 }
 
 h1 {
-  font-size: 1.4rem !important;
-  font-weight: 600 !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
 }
 
 h2 {
-  font-size: 1.3rem !important;
-  font-weight: 600 !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
 }
 
 h5 {
-  font-size: 1.1rem !important;
+    font-size: 1.1rem !important;
 }
 
 h6 {
-  font-size: .65rem !important;
-  letter-spacing: 0.09rem !important;
-}
-
-.cover-image {
-  width: 100%;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.09rem !important;
 }
 
 p {
-  font-size: 0.9rem !important;
+    font-size: 0.9rem !important;
 }
 
 b {
-  font-weight: 800;
+    font-weight: 800;
 }
 
 li {
-  font-size: 1rem !important;
+    font-size: 1rem !important;
 }
 
 hr {
-  margin: 2px 0 8px 0 !important;
+    margin: 2px 0 8px 0 !important;
 }
 
 .bold {
-  font-weight: 500 !important;
+    font-weight: 500 !important;
 }
 
 .content-block {
-  padding: 24px;
+    padding: 24px;
 }
 
 .section {
-  margin-top: 40px;
+    margin-top: 40px;
 }
 
 .align-right {
-  text-align: right;
+    text-align: right;
 }
 
 .faq-container {
-  margin-top: 40px;
-  padding: 0 !important;
+    margin-top: 40px;
+    padding: 0 !important;
 }
 
 .faq-img {
-  padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 .alignRightInfo {
-  text-align: right;
+    text-align: right;
 }
 
 @media only screen and (max-width: 576px) {
-  .alignRightInfo {
-    text-align: left;
-  }
+    .alignRightInfo {
+        text-align: left;
+    }
 }
 
 @media (max-width: 768px) and (min-width: 576px) {
-  .navbar {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
+    .navbar {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
 
-  .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    max-width: 90% !important;
-  }
+    .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 90% !important;
+    }
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
-  .navbar {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
+    .navbar {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
 
-  .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    max-width: 90% !important;
-  }
+    .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 90% !important;
+    }
 }

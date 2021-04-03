@@ -1,10 +1,11 @@
-import { Container, Image } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
+import { Container } from "react-bootstrap";
+
 import Layout from "../components/layout";
 import Faqs from "../components/faqs";
 import Loaders from "../components/loaders";
 import HOME_QUERY from "../graphql/home.query";
 import { initializeApollo } from "../client/apollo";
+import Section from "../components/section";
 
 const Home = (props) => {
     const { loading, error, data } = props;
@@ -16,24 +17,12 @@ const Home = (props) => {
         return <h1>Error fetching data!</h1>;
     }
 
-    const { abouts, faqs } = data;
-    const about = abouts[0];
+    const { sections, faqs } = data;
+    const section = sections[0];
     return (
-        <Layout title={about.title} description={about.description}>
-            <Image
-                className="cover-image"
-                src={about.heroImage.url}
-                alt="hero image"
-            />
+        <Layout title={section.title} description={section.description}>
+            <Section section={section} />
             <Container>
-                <div className="section">
-                    <h1>ABOUT</h1>
-                    <hr />
-                    <ReactMarkdown>{about.intro.markdown}</ReactMarkdown>
-                    <Image src={about.map.url} fluid alt="map" />
-                    <ReactMarkdown>{about.mapDesc.markdown}</ReactMarkdown>
-                </div>
-
                 <Faqs faqs={faqs} />
             </Container>
         </Layout>
