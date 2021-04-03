@@ -1,14 +1,23 @@
 import { Container } from "react-bootstrap";
-
 import Layout from "../components/layout";
 import Faqs from "../components/faqs";
 import Loaders from "../components/loaders";
 import HOME_QUERY from "../graphql/home.query";
 import { initializeApollo } from "../client/apollo";
 import Section from "../components/section";
+import ISection from "../types/ISection";
+import IFaq from "../types/IFaqs";
 
-const Home = (props) => {
-    const { loading, error, data } = props;
+interface IHomeProps {
+    loading: boolean;
+    error: boolean;
+    data: {
+        sections: Array<ISection>;
+        faqs: Array<IFaq>;
+    };
+}
+
+const Home = ({ loading, error, data }) => {
     if (loading) {
         return <Loaders />;
     }
@@ -18,7 +27,7 @@ const Home = (props) => {
     }
 
     const { sections, faqs } = data;
-    const section = sections[0];
+    const section: ISection = sections[0];
     return (
         <Layout title={section.title} description={section.description}>
             <Section section={section} />

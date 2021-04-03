@@ -1,8 +1,13 @@
 import { Container, Image } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import styles from "../scss/section.module.scss";
+import ISection from "../types/ISection";
 
-const Section = ({ section }) => (
+interface ISectionProps {
+    section: ISection;
+}
+
+const Section = ({ section }: ISectionProps) => (
     <>
         <Image
             className={styles.coverImage}
