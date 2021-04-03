@@ -1,37 +1,38 @@
 .experiences {
-  h6 {
-    font-size: 0.84rem !important;
-    letter-spacing: 0.05rem !important;
-  }
-  li {
-    font-size: 0.835rem !important;
-  }
+    h6 {
+        font-size: 0.84rem !important;
+        letter-spacing: 0.05rem !important;
+    }
+    li {
+        font-size: 0.835rem !important;
+    }
 }
 
 .section {
-  margin-top: 20px;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .skillsContainer {
-  line-height: 1 !important;
+    line-height: 1 !important;
 }
 
 .skills {
-  display: inline-block;
+    display: inline-block;
 }
 
 h6.skills {
-  padding-right: 5px;
+    padding-right: 5px;
 }
 
 p.skills {
-  margin-bottom: 0;
-  font-size: 0.835rem !important;
+    margin-bottom: 0;
+    font-size: 0.835rem !important;
 }
 
 @media only screen and (max-width: 576px) {
-  .experience, .degree {
-    padding-bottom: 16px !important;
-  }
+    .experience,
+    .degree {
+        padding-bottom: 16px !important;
+    }
 }

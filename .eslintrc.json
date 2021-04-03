@@ -1,0 +1,31 @@
+{
+    "extends": [
+        "react-app",
+        "eslint:recommended",
+        "google",
+        "prettier",
+        "prettier/react"
+    ],
+    "rules": {
+        "require-jsdoc": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "no-undef": "off"
+    },
+    "plugins": [
+        "jest"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "jest/globals": true
+    }
+}
