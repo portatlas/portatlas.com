@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import Layout from "../components/layout";
 import Faqs from "../components/faqs";
 import Loaders from "../components/loaders";
-import ABOUT_QUERY from "../graphql/about.query";
+import HOME_QUERY from "../graphql/home.query";
 import { initializeApollo } from "../client/apollo";
 
 const Home = (props) => {
@@ -16,7 +16,8 @@ const Home = (props) => {
         return <h1>Error fetching data!</h1>;
     }
 
-    const { about } = props.data;
+    const { abouts, faqs } = data;
+    const about = abouts[0];
     return (
         <Layout title={about.title} description={about.description}>
             <Image
@@ -33,7 +34,7 @@ const Home = (props) => {
                     <ReactMarkdown>{about.mapDesc.markdown}</ReactMarkdown>
                 </div>
 
-                <Faqs />
+                <Faqs faqs={faqs} />
             </Container>
         </Layout>
     );
@@ -43,7 +44,7 @@ export async function getStaticProps() {
     const apolloClient = initializeApollo();
 
     const { data } = await apolloClient.query({
-        query: ABOUT_QUERY,
+        query: HOME_QUERY,
     });
 
     return {
