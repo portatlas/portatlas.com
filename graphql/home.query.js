@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const HOME_QUERY = gql`
     query homePage {
-        sections(where: { title: "HOME PAGE" }) {
+        sections(where: { title: "ABOUT" }) {
             id
             title
             description

@@ -1,11 +1,11 @@
-import { Container, Image } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
+import { Container } from "react-bootstrap";
+
 import Layout from "../components/layout";
 import Faqs from "../components/faqs";
 import Loaders from "../components/loaders";
 import HOME_QUERY from "../graphql/home.query";
 import { initializeApollo } from "../client/apollo";
-import styles from "../scss/index.module.scss";
+import Section from "../components/section";
 
 const Home = (props) => {
     const { loading, error, data } = props;
@@ -21,18 +21,8 @@ const Home = (props) => {
     const section = sections[0];
     return (
         <Layout title={section.title} description={section.description}>
-            <Image
-                className={styles.coverImage}
-                src={section.heroImage.url}
-                alt="hero image"
-            />
+            <Section section={section} />
             <Container>
-                <div className={styles.section}>
-                    <h1>ABOUT</h1>
-                    <hr />
-                    <ReactMarkdown>{section.intro.markdown}</ReactMarkdown>
-                </div>
-
                 <Faqs faqs={faqs} />
             </Container>
         </Layout>
