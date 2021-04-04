@@ -1,0 +1,18 @@
+{
+    "id":"1",
+    "name":"Title",
+    "designer":"Designer",
+    "medium":[
+        "wood"
+    ],
+    "year":"2019",
+    "dimensions":[
+        
+    ],
+    "description":{
+        "markdown":"Lorem Ipsum"
+    },
+    "heroImage":{
+        "url":"https://image.com/image.png"
+    }
+}

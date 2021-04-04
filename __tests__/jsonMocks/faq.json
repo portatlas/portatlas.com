@@ -1,0 +1,15 @@
+{
+    "id":"123",
+    "image":{
+       "id":"234",
+       "description":"foo",
+       "picture":{
+          "url":"https://image.com/image.png"
+       },
+       "url":"https://image.com/image.png"
+    },
+    "question":"What?",
+    "answer":{
+       "markdown":"Lorem Ipsum"
+    }
+ }

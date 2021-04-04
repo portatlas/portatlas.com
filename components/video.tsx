@@ -10,6 +10,7 @@ const Video = ({ video }: IVideoProp) => {
     return (
         <div className={styles.videoWrapper}>
             <iframe
+                data-testid="video"
                 className={styles.video}
                 title="vid"
                 src={video.url}

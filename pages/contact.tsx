@@ -56,8 +56,7 @@ const Contact = () => {
         setIsLoading(true);
         try {
             const response = await axios.post("/api/contact", emailPayload);
-
-            if (response) {
+            if (response?.status === 200) {
                 setIsLoading(false);
                 setMessage(
                     "Thank you for the message, we will get back to you shortly"

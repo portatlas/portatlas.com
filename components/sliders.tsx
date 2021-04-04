@@ -16,6 +16,7 @@ const Sliders = ({ images }: ISlidersProp) => {
                             <p>{img?.description?.markdown}</p>
                         </Carousel.Caption>
                         <Image
+                            data-testid="image"
                             className={styles.image}
                             alt={img?.description?.markdown}
                             src={img.picture.url}
