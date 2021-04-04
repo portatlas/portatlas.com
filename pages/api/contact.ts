@@ -13,6 +13,7 @@ export default async function (req, res) {
         const { data } = response;
         res.status(response.status).send(data);
     } catch (error) {
-        res.status(200).send(error.message);
+        const { response } = error;
+        res.status(response?.status || 500).send(error?.message);
     }
 }

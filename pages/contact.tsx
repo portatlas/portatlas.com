@@ -4,6 +4,7 @@ import axios from "axios";
 import Layout from "../components/layout";
 import styles from "../scss/contact.module.scss";
 import Loaders from "../components/loaders";
+import { GENERIC_ERR } from "../const/errors";
 
 interface IEmailPayload {
     fullname: string;
@@ -24,11 +25,6 @@ const reducer = (emailPayload: IEmailPayload, action) => {
         case "updateFormField":
             return {
                 ...emailPayload,
-                [action.fieldName]: action.fieldValue,
-            };
-        case "resetFormFields":
-            return {
-                ...initialPayload,
                 [action.fieldName]: action.fieldValue,
             };
         default:
@@ -59,11 +55,7 @@ const Contact = () => {
         event.preventDefault();
         setIsLoading(true);
         try {
-            const response = await axios({
-                method: "post",
-                url: "/api/contact",
-                data: emailPayload,
-            });
+            const response = await axios.post("/api/contact", emailPayload);
 
             if (response) {
                 setIsLoading(false);
@@ -73,7 +65,7 @@ const Contact = () => {
             }
         } catch (error) {
             setIsLoading(false);
-            setMessage("Sorry something went wrong, please try again later");
+            setMessage(GENERIC_ERR);
         }
     };
 
@@ -100,7 +92,7 @@ const Contact = () => {
                             onChange={handleInputChange("fullname")}
                             id="fullname"
                             required
-                            className=""
+                            className={styles.input}
                             type="text"
                         />
 

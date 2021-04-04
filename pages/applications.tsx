@@ -1,30 +1,18 @@
-import { Container, Row, Col, Image, Carousel } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import Loaders from "../components/loaders";
 import styles from "../scss/portfolio.module.scss";
 import { initializeApollo } from "../client/apollo";
 import APPLICATION_QUERY from "../graphql/application.query";
 import Layout from "../components/layout";
 import IApp from "../types/IApp";
-import IImage from "../types/IImage";
-
+import Sliders from "../components/sliders";
 interface IApplicationsProp {
-    error: boolean;
-    loading: boolean;
     data: {
         applications: Array<IApp>;
     };
 }
 
-const Applications = ({ error, loading, data }: IApplicationsProp) => {
-    if (loading) {
-        return <Loaders />;
-    }
-
-    if (error) {
-        return <h1>Error fetching applications!</h1>;
-    }
-
+const Applications = ({ data }: IApplicationsProp) => {
     const applications: Array<IApp> = data?.applications;
 
     return (
@@ -70,14 +58,13 @@ const Applications = ({ error, loading, data }: IApplicationsProp) => {
                                 </Col>
                                 <Col xs={6} sm={3} md={3}>
                                     <h6>TECH:</h6>
-                                    {app.tech.map((t, idx) => {
+                                    {app.tech.map((tech: string) => {
                                         return (
                                             <h6
                                                 className={styles.multiInfo}
-                                                key={idx}
+                                                key={tech}
                                             >
-                                                {" "}
-                                                <b>{t}</b>
+                                                <b>{tech}</b>
                                             </h6>
                                         );
                                     })}
@@ -113,37 +100,7 @@ const Applications = ({ error, loading, data }: IApplicationsProp) => {
                                         </div>
                                     )}
                                     {!app.video && (
-                                        <Carousel interval={null}>
-                                            {app.image.map((img: IImage) => {
-                                                return (
-                                                    <Carousel.Item key={img.id}>
-                                                        <Carousel.Caption
-                                                            className={
-                                                                styles.caption
-                                                            }
-                                                        >
-                                                            <p>
-                                                                {img.description
-                                                                    ? img
-                                                                          .description
-                                                                          .markdown
-                                                                    : null}
-                                                            </p>
-                                                        </Carousel.Caption>
-                                                        <Image
-                                                            className={
-                                                                styles.image
-                                                            }
-                                                            alt={app.name}
-                                                            src={
-                                                                img.picture.url
-                                                            }
-                                                            fluid
-                                                        />
-                                                    </Carousel.Item>
-                                                );
-                                            })}
-                                        </Carousel>
+                                        <Sliders images={app.image} />
                                     )}
                                 </Col>
                             </Row>
@@ -167,7 +124,7 @@ export async function getStaticProps() {
         props: {
             data,
         },
-        unstable_revalidate: 1,
+        revalidate: 1,
     };
 }
 

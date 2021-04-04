@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
+import { DocumentNode } from "graphql";
 
-const OBJECT_QUERY = gql`
+const OBJECT_QUERY: DocumentNode = gql`
     query objects {
         objects {
             id
