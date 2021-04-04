@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
+import { DocumentNode } from "graphql";
 
-const APPLICATION_QUERY = gql`
+const APPLICATION_QUERY: DocumentNode = gql`
     query applications {
         applications(orderBy: year_DESC) {
             id

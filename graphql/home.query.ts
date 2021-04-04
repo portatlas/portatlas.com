@@ -1,6 +1,7 @@
 import gql from "graphql-tag";
+import { DocumentNode } from "graphql";
 
-const HOME_QUERY = gql`
+const HOME_QUERY: DocumentNode = gql`
     query homePage {
         sections(where: { title: "ABOUT" }) {
             id

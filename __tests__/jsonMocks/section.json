@@ -1,0 +1,9 @@
+{
+    "heroImage": {
+        "url": "https://image.com/image.png"
+    },
+    "title": "Title",
+    "intro": {
+        "markdown": "Lorem Ipsum"
+    }
+}
