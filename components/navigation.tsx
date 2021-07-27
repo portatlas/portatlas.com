@@ -29,6 +29,12 @@ const Navigation = () => (
                     <Nav.Link className={styles.link} href="/lights">
                         LIGHTS
                     </Nav.Link>
+                    <Nav.Link
+                        className={styles.link}
+                        href="https://shop.portatlas.com"
+                    >
+                        SHOP
+                    </Nav.Link>
                     <Nav.Link className={styles.link} href="/contact">
                         CONTACT
                     </Nav.Link>
