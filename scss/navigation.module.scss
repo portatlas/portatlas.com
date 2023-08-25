@@ -18,3 +18,11 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
+
+.navbarToggler:focus {
+    box-shadow: none;
+}
+
+.responsiveNavbar {
+    justify-content: flex-end !important;
+}
