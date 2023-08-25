@@ -1,4 +1,5 @@
 import NextHead from "next/head";
+import Script from "next/script";
 
 interface IHeadProp {
     title: string;
@@ -38,10 +39,15 @@ const Head = ({ title, description }: IHeadProp) => {
                 name="twitter:image"
                 content="https://portatlas.com/img/analog_sunset.png"
             />
-            <script
-                async
-                src="https://www.googletagmanager.com/gtag/js?id=UA-83806482-4"
-            ></script>
+            <Script id="google-analytics">
+                {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+ 
+                 gtag('config', '403864955');
+                `}
+            </Script>
             <link rel="icon" href="/favicon.ico" />
             <link
                 rel="stylesheet"

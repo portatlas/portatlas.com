@@ -20,7 +20,10 @@ const Navigation = () => (
                 className={styles.navbarToggler}
                 aria-controls="responsive-navbar-nav"
             />
-            <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Collapse
+                id="responsive-navbar-nav"
+                className={styles.responsiveNavbar}
+            >
                 <Nav className="mr-auto"></Nav>
                 <Nav>
                     <Nav.Link className={styles.link} href="/applications">
