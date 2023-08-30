@@ -2,6 +2,14 @@
 
 This is a next.js app that fetches data from GraphCMS via ApolloClient. The app calls an AWS lambda function and utilizizes AWS SES to send emails on the contact page.
 
+## Build
+
+To build the project code
+
+```bash
+npm run build
+```
+
 ## Running locally
 
 First, run the development server:
